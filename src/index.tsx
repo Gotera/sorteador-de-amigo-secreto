@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Formulario from './components/Formulario';
+import Formulario from './components/Formulary';
 import Header from './components/Header';
 
 ReactDOM.render(
