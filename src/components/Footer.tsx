@@ -8,10 +8,14 @@ const Footer = () => {
 	const start = () => {
 		navigate('/sorteio')
 	}
-	
+
 	return (
-		<footer>
-			<button disabled={participants.length < 3} onClick={start}>Iniciar Brincadeira</button>
+		<footer
+			className="rodape-configuracoes">
+			<button
+				className="botao"
+				disabled={participants.length < 3}
+				onClick={start}>Iniciar Brincadeira</button>
 		</footer>
 	)
 }

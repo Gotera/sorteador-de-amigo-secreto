@@ -1,6 +1,7 @@
 import { useRef, useState } from "react"
 import { useAddParticipant } from "./state/hook/useAddParticpant"
 import { useErrorMessage } from "./state/hook/useErrorMessage"
+import './Form.css'
 
 const Formulario = () => {
 
@@ -18,6 +19,7 @@ const Formulario = () => {
 
 	return (
 	<form onSubmit={addParticpant}>
+		<div className="grupo-input-btn">
 			<input 
 				ref={inputRef}
 				value={name}
@@ -27,7 +29,8 @@ const Formulario = () => {
 			/>
 			{/* se eu NÃO tiver um nome o botão estara desabilitado */}
 			<button disabled={!name}>Adicionar</button>
-			{errorMessage && <p role="alert">{errorMessage}</p>}
+		</div>
+			{errorMessage && <p className="alerta erro" role="alert">{errorMessage}</p>}
 	</form>)
 }
 
