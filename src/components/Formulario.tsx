@@ -1,6 +1,6 @@
 import { useRef, useState } from "react"
-import { useAddParticipant } from "./state/useAddParticpant"
-import { useErrorMessage } from "./state/useErrorMessage"
+import { useAddParticipant } from "./state/hook/useAddParticpant"
+import { useErrorMessage } from "./state/hook/useErrorMessage"
 
 const Formulario = () => {
 

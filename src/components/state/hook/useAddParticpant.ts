@@ -1,5 +1,5 @@
 import { useRecoilValue, useSetRecoilState } from "recoil"
-import { errorState, listParticipantsState } from "../atom"
+import { errorState, listParticipantsState } from "../../atom"
 
 export const useAddParticipant = () => {
 	const setList = useSetRecoilState(listParticipantsState)
