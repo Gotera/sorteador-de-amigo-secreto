@@ -10,12 +10,20 @@ jest.mock('./state/hook/useParticipantsList', () => {
 })
 
 const mockNavigate = jest.fn()
+const mockDraw = jest.fn()
+
+jest.mock('./state/hook/useDrawing', () => {
+	return {
+		useDrawing: () => mockDraw
+	}
+})
 
 jest.mock('react-router-dom', () => {
 	return {
 		useNavigate: () => mockNavigate
 	}
 })
+
 describe('quando não existem praticipantes suficientes', () => {
 	beforeEach(() => {
 		(useParticipantsList as jest.Mock).mockReturnValue([])
@@ -52,5 +60,6 @@ describe('quando existem praticipantes suficientes', () => {
 		fireEvent.click(botao)
 		expect(mockNavigate).toHaveBeenCalledTimes(1)
 		expect(mockNavigate).toHaveBeenCalledWith('/sorteio')
+		expect(mockDraw).toHaveBeenCalledTimes(1)
 	})
 })
